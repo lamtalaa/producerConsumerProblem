@@ -36,7 +36,7 @@ void* consumer(void* argv){
         int t = rand() % 2 + 1;
         sleep(t);
         pthread_mutex_lock(&mutex);
-        int x = buffer[count];
+        buffer[count] = 0;
         count = count - 1;
         printf("Item consumed, %d remaining.\n", count);
         pthread_mutex_unlock(&mutex);
